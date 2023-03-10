@@ -106,9 +106,16 @@ class _AppState extends State<App> {
                   : FittedBox(
                       child: Stack(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Image.asset(imagem),
+                          GestureDetector(
+                            onDoubleTap: () {
+                              setState(() {
+                                imc = null;
+                              });
+                            },
+                            child: Padding(  
+                              padding: const EdgeInsets.all(15.0),
+                              child: Image.asset(imagem),
+                            ),
                           ),
                           Center(
                               child: Column(
